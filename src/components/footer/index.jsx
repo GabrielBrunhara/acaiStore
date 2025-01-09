@@ -6,7 +6,7 @@ function Footer() {
   return (
     <Styled.FooterContainer>
       <Styled.LogoContainer>
-        <img src="/assets/logo.png" alt="Logo" />
+        <img src="/acaiStore/assets/logo.png" alt="Logo" />
       </Styled.LogoContainer>
       <Styled.InfoContainer>
         <Styled.InfoSection>

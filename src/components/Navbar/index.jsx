@@ -34,7 +34,7 @@ const Navbar = ({ handleThemeToggle, dark }) => {
       {/* <Switch handleThemeToggle={handleThemeToggle} dark={dark} /> */}
       <Styled.ListName>
         <Styled.Name>
-          <img src={'/assets/logo.png'} alt="logo" width="50" />
+          <img src={'/acaiStore/assets/logo.png'} alt="logo" width="50" />
           Sua Marca
         </Styled.Name>
       </Styled.ListName>
