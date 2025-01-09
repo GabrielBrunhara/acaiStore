@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import acai from '/assets/acai2.png';
-import acai2 from '/assets/acai3.png';
+import acai from '/assets/acai7.png';
+import acai2 from '/assets/acai6.png';
 
 import Header from '../components/Header';
 import HomeSection from '../components/HomeSection';
