@@ -82,3 +82,13 @@ export const Icon = styled.a`
     }
   }
 `;
+
+export const Rights = styled.p`
+  background-color: var(--footer-bg, #333);
+  margin: 0;
+  text-align: center;
+  padding-bottom: 20px;
+  @media (max-width: 768px) {
+    align-self: center;
+  }
+`;
