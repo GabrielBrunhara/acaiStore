@@ -2,12 +2,11 @@ import { useRef, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
-import P from 'prop-types';
+import { Link } from 'react-router-dom';
 
-/* import Switch from '../../Templates/Switch'; */
 import * as Styled from './style';
 
-const Navbar = ({ handleThemeToggle, dark }) => {
+const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const { scrollY } = useScroll();
@@ -24,6 +23,10 @@ const Navbar = ({ handleThemeToggle, dark }) => {
     }
   });
 
+  const handleLinkClick = () => {
+    setIsChecked(false);
+  };
+
   return (
     <Styled.Navbar
       ref={navbarRef}
@@ -31,7 +34,6 @@ const Navbar = ({ handleThemeToggle, dark }) => {
       animate={{ y: isVisible ? 0 : '-100%' }}
       transition={{ type: 'tween', duration: 0.5 }}
     >
-      {/* <Switch handleThemeToggle={handleThemeToggle} dark={dark} /> */}
       <Styled.ListName>
         <Styled.Name>
           <img src={'/acaiStore/assets/logo.png'} alt="logo" width="50" />
@@ -44,22 +46,23 @@ const Navbar = ({ handleThemeToggle, dark }) => {
       </Styled.ToggleMenu>
       <Styled.List $isChecked={isChecked}>
         <li>
-          <a href="#header">Home</a>
+          <Link to="/" onClick={handleLinkClick}>
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#about">Acompanhamentos</a>
+          <Link to="/acomp" onClick={handleLinkClick}>
+            Acompanhamentos
+          </Link>
         </li>
         <li>
-          <a href="#projects">Sobre</a>
+          <Link to="/about" onClick={handleLinkClick}>
+            Sobre Nós
+          </Link>
         </li>
       </Styled.List>
     </Styled.Navbar>
   );
-};
-
-Navbar.propTypes = {
-  handleThemeToggle: P.func.isRequired,
-  dark: P.bool.isRequired,
 };
 
 export default Navbar;

@@ -4,8 +4,8 @@ export const Section = styled.div`
   position: relative;
   background: white;
   min-height: ${({ $height }) => $height};
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   color: var(--text);
@@ -17,10 +17,9 @@ export const Section = styled.div`
     padding: 20px;
   }
 `;
-
 export const Img = styled.img`
   object-fit: cover;
-  max-height: 100%;
+  max-height: 500px;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -28,42 +27,27 @@ export const Img = styled.img`
   }
 `;
 
-export const Content = styled.div`
-  position: relative;
-  padding: 70px;
-
-  h1 {
-    font-weight: 800;
-    margin: 0;
-    font-size: 2rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.8rem;
-    }
-  }
-
-  h3 {
-    font-weight: 700;
-    margin: 0;
-    margin-bottom: 20px;
-
-    @media (max-width: 768px) {
-      font-size: 1.2rem;
-    }
-  }
-
-  p {
-    text-align: justify;
-    padding: 20px 100px;
-    font-size: 18px;
-
-    @media (max-width: 768px) {
-      padding: 10px;
-      font-size: 16px;
-    }
-  }
+export const CardContent = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 60px;
 
   @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+`;
+
+export const Photos = styled.div`
+  position: relative;
+  background: white;
+  height: 50vh;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
     padding: 20px;
   }
 `;

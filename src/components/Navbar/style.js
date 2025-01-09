@@ -36,7 +36,6 @@ export const ListName = styled.ul`
 `;
 
 export const Name = styled.li`
-  padding-left: 50px;
   display: flex;
   align-items: center;
   gap: 10px;

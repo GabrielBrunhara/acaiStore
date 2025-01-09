@@ -1,11 +1,18 @@
-import { AcaiSection, Title } from '../../styles/globalStyle';
+import P from 'prop-types';
 
-function PreFooter() {
+import { AcaiSection, Title } from '../../styles/GlobalStyle';
+
+function PreFooter({ height = '100vh', title }) {
   return (
-    <AcaiSection $background={'var(--primary)'} $height={'100vh'}>
-      <Title>FIQUE DE OLHO NAS NOSSAS OFERTAS EXCLUSIVAS!</Title>
+    <AcaiSection $background={'var(--primary)'} $height={height}>
+      <Title>{title}</Title>
     </AcaiSection>
   );
 }
+
+PreFooter.propTypes = {
+  height: P.string,
+  title: P.string,
+};
 
 export default PreFooter;

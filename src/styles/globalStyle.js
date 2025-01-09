@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -54,12 +54,89 @@ export const AcaiSection = styled(BaseSection).attrs({ as: 'section' })``;
 export const HeaderSection = styled(BaseSection).attrs({ as: 'header' })``;
 
 export const Title = styled.h1`
+  ${({ $position }) =>
+    $position &&
+    css`
+      position: ${$position};
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 180%);
+    `}
   color: white;
-  filter: drop-shadow(-7px 5px 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(-7px 5px 3px rgba(0, 0, 0, 0.5));
   font-size: 70px;
 
   @media (max-width: 768px) {
-    font-size: 50px;
+    font-size: 35px;
+  }
+`;
+
+export const AcaiImage = styled.img`
+  transform: translate(50%, 125px);
+  right: 50%;
+  z-index: 0;
+  position: fixed;
+  max-height: 80%;
+  filter: drop-shadow(0px 0px 50px rgb(255, 255, 255));
+
+  @media (max-width: 768px) {
+    max-height: 60%;
+  }
+`;
+
+export const Content = styled.div`
+  position: relative;
+  padding: 70px;
+
+  h1 {
+    font-weight: 800;
+    margin: 0;
+    font-size: 2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 4px solid var(--primary);
+      border-radius: 20px;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+        inset: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  h3 {
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  p {
+    text-align: justify;
+    padding: 20px 100px;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
   }
 `;
 
