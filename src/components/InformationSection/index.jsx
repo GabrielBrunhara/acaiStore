@@ -8,7 +8,7 @@ import AcompCard from './AcompCard';
 const InformationSection = ({ image, title, card }) => {
   return (
     <>
-      <Styled.Section $background={'var(--secondary)'} $height={'60vh'} /* grid={home} */>
+      <Styled.Section $background={'var(--secondary)'} $height={'60vh'}>
         <Styled.Img src={image} />
         <Title $position={'absolute'}>{title}</Title>
         {card && (

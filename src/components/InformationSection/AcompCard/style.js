@@ -14,7 +14,7 @@ export const AcompCard = styled.div`
     box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0px 4px 30px var(--primary);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   }
 `;
 
